@@ -175,5 +175,3 @@ export const products = [
     specifications: commonSpecifications,
   },
 ];
-
-export const featuredProducts = products.slice(0, 6);

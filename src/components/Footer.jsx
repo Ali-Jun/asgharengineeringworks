@@ -14,7 +14,7 @@ export default function Footer() {
               <CompanyLogo className="h-14 w-24 p-1" />
               <div>
                 <p className="text-lg font-black">{company.name}</p>
-                <p className="text-sm text-slate-400">Corporate manufacturing and product catalog</p>
+                <p className="text-sm text-slate-400">Corporate precision manufacturing</p>
               </div>
             </div>
             <p className="mt-5 max-w-xl leading-7 text-slate-300">

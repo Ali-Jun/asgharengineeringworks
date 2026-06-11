@@ -13,7 +13,6 @@ export const navItems = [
   { label: 'About', path: '/about' },
   { label: 'Quality', path: '/quality' },
   { label: 'Products', path: '/products' },
-  { label: 'Gallery', path: '/gallery' },
   { label: 'Clients', path: '/clients' },
   { label: 'Contact', path: '/contact' },
 ];

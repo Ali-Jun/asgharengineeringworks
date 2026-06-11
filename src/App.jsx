@@ -8,7 +8,6 @@ import About from './pages/About.jsx';
 import Quality from './pages/Quality.jsx';
 import Products from './pages/Products.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
-import Gallery from './pages/Gallery.jsx';
 import Clients from './pages/Clients.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
@@ -35,7 +34,6 @@ export default function App() {
           <Route path="/quality" element={<Quality />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

@@ -1,14 +1,11 @@
-import { ArrowRight, Clock, Cog, Factory, Gauge, ShieldCheck, Wrench } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock, Cog, Factory, Gauge, Ruler, ShieldCheck, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTA from '../components/CTA.jsx';
 import CustomerLogoMarquee from '../components/CustomerLogoMarquee.jsx';
 import PageMeta from '../components/PageMeta.jsx';
-import ProductCard from '../components/ProductCard.jsx';
 import ScrollReveal from '../components/ScrollReveal.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
 import WhatsAppButton from '../components/WhatsAppButton.jsx';
-import { company } from '../data/company.js';
-import { featuredProducts } from '../data/products.js';
 import { assetPath } from '../utils/assetPath.js';
 
 const strengths = [
@@ -18,7 +15,14 @@ const strengths = [
   { icon: Cog, title: 'Custom Components', copy: 'Support for drawings, samples, repairs, and small-to-batch requirements.' },
 ];
 
-const capabilities = ['Turning', 'Boring', 'Threading', 'Finishing', 'Custom fitting', 'Workshop repair support'];
+const capabilities = [
+  { icon: Wrench, title: 'Turning and Boring', copy: 'Clean machining support for round, stepped, and bored metal work.' },
+  { icon: Ruler, title: 'Fitment Review', copy: 'Measurements and matching checks for drawing, sample, and repair jobs.' },
+  { icon: Cog, title: 'Threading and Fitting', copy: 'Practical support for threaded, connected, and assembled components.' },
+  { icon: CheckCircle2, title: 'Final Finishing', copy: 'Surface, edge, and readiness checks before delivery discussion.' },
+];
+
+const workflow = ['Requirement review', 'Material discussion', 'Machining plan', 'Inspection and delivery'];
 
 export default function Home() {
   return (
@@ -37,11 +41,11 @@ export default function Home() {
           backgroundSize: 'cover',
         }}
       >
-        <div className="container-shell grid min-h-[78vh] items-center gap-10 py-14 lg:grid-cols-[1fr_420px]">
+        <div className="container-shell grid min-h-[78vh] items-center gap-10 py-14 lg:grid-cols-[1fr_380px]">
           <div className="motion-fade-up max-w-3xl">
             <p className="mb-4 inline-flex items-center gap-2 rounded-md border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold text-slate-100">
               <Factory size={17} aria-hidden="true" />
-              Corporate manufacturing and product catalog
+              Corporate precision manufacturing
             </p>
             <h1 className="max-w-full text-4xl font-black leading-[1.05] text-white sm:text-5xl md:text-7xl">
               <span className="block">Asghar Engineering</span>
@@ -59,7 +63,7 @@ export default function Home() {
               <WhatsAppButton className="btn-whatsapp w-full sm:w-auto" />
             </div>
             <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {['Machined Parts', 'Product Catalog', 'Direct WhatsApp', 'Quality First'].map((item) => (
+              {['Machined Parts', 'Custom Work', 'Direct WhatsApp', 'Quality First'].map((item) => (
                 <div className="stat-tile rounded-lg border border-white/14 bg-white/10 px-4 py-3 backdrop-blur" key={item}>
                   <p className="text-sm font-extrabold text-white">{item}</p>
                 </div>
@@ -67,21 +71,23 @@ export default function Home() {
             </div>
           </div>
           <div className="motion-fade-up motion-delay-2 hidden lg:block">
-            <div className="hero-product-panel border border-white/14 bg-white/10 p-4 backdrop-blur">
-              <img
-                className="aspect-square w-full bg-white object-cover"
-                src={assetPath('/images/products/product-12.jpeg')}
-                alt="Stepped precision machined pin"
-              />
-              <div className="mt-4 grid grid-cols-[1fr_auto] items-center gap-4">
-                <div>
-                  <p className="text-sm font-bold text-amber-200">Featured Part</p>
-                  <p className="font-display text-2xl font-black text-white">Stepped Precision Pin</p>
-                </div>
-                <Link className="btn-primary px-4" to="/products/product-12" aria-label="View stepped precision pin">
-                  <ArrowRight size={18} aria-hidden="true" />
-                </Link>
+            <div className="hero-product-panel border border-white/14 bg-white/10 p-5 backdrop-blur">
+              <p className="text-sm font-bold text-amber-200">Workshop Readiness</p>
+              <h2 className="mt-2 font-display text-3xl font-black text-white">Engineering inquiry desk</h2>
+              <div className="mt-6 grid gap-3">
+                {workflow.map((item, index) => (
+                  <div className="grid grid-cols-[42px_1fr] items-center gap-3 rounded-md border border-white/12 bg-white/10 p-3" key={item}>
+                    <span className="grid h-10 w-10 place-items-center rounded-md bg-white text-sm font-black text-[var(--brand)]">
+                      {index + 1}
+                    </span>
+                    <span className="font-bold text-slate-100">{item}</span>
+                  </div>
+                ))}
               </div>
+              <Link className="btn-primary mt-6 w-full" to="/contact">
+                Start Inquiry
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>
@@ -115,42 +121,26 @@ export default function Home() {
       <section className="page-band industrial-grid bg-slate-100">
         <div className="container-shell">
           <ScrollReveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <SectionTitle eyebrow="Featured Products" title="A clean catalog for precision engineering products.">
-              Browse the machined components produced for industrial assemblies, maintenance work, and custom
-              requirements.
+            <SectionTitle eyebrow="Engineering Capability" title="Classic workshop capability for serious inquiries.">
+              Clear manufacturing support for buyers who want practical machining, repair, and fitment communication
+              before placing an order.
             </SectionTitle>
             <Link className="btn-quiet w-fit" to="/products">
-              Browse All
+              Open Products Page
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </ScrollReveal>
-          <ScrollReveal className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_1.85fr]" delay={80}>
-            <Link
-              className="classic-product-card group overflow-hidden rounded-sm border border-slate-300 bg-white shadow-sm"
-              to={`/products/${featuredProducts[0].id}`}
-            >
-              <div className="product-data-header">
-                <span>Featured Component</span>
-                <span className="product-code">AEW-FEATURED</span>
-              </div>
-              <div className="aspect-[4/3] overflow-hidden bg-white">
-                <img
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  src={featuredProducts[0].image}
-                  alt={`${featuredProducts[0].name} product`}
-                />
-              </div>
-              <div className="p-6">
-                <p className="eyebrow">{featuredProducts[0].category}</p>
-                <h3 className="mt-2 text-3xl font-black text-slate-950">{featuredProducts[0].name}</h3>
-                <p className="mt-3 leading-7 text-slate-600">{featuredProducts[0].shortDescription}</p>
-              </div>
-            </Link>
-            <div className="grid gap-5 sm:grid-cols-2">
-              {featuredProducts.slice(1).map((product, index) => (
-                <ProductCard delay={index * 70} key={product.id} product={product} />
-              ))}
-            </div>
+          <ScrollReveal className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" delay={80}>
+            {capabilities.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article className="stat-tile rounded-lg border border-slate-200 bg-white p-6 shadow-sm" key={item.title}>
+                  <Icon className="text-teal-700" size={30} aria-hidden="true" />
+                  <h3 className="mt-5 text-xl font-black text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.copy}</p>
+                </article>
+              );
+            })}
           </ScrollReveal>
         </div>
       </section>
@@ -158,13 +148,24 @@ export default function Home() {
       <section className="page-band bg-white">
         <div className="container-shell">
           <ScrollReveal className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div className="overflow-hidden rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
-              <img
-                className="aspect-square w-full object-cover"
-                src={assetPath('/images/products/product-08.jpeg')}
-                alt="Double lug machined connector"
-                loading="lazy"
-              />
+            <div className="process-panel rounded-lg border border-slate-200 bg-slate-950 p-6 text-white shadow-sm">
+              <p className="eyebrow text-white">Process Board</p>
+              <h2 className="mt-3 font-display text-3xl font-black">From sample to finished work.</h2>
+              <div className="mt-8 grid gap-4">
+                {workflow.map((item, index) => (
+                  <div className="tech-row items-start" key={item}>
+                    <div className="grid h-12 w-12 place-items-center rounded-md bg-white font-black text-[var(--brand)]">
+                      {String(index + 1).padStart(2, '0')}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-black text-white">{item}</h3>
+                      <p className="mt-1 text-sm leading-6 text-slate-300">
+                        Each step keeps communication clear, dimensions practical, and delivery expectations direct.
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <div>
               <SectionTitle eyebrow="Manufacturing Capability" title="Clear workflows for custom engineering work.">
@@ -173,9 +174,9 @@ export default function Home() {
               </SectionTitle>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 {capabilities.map((capability) => (
-                  <div className="stat-tile flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3" key={capability}>
+                  <div className="stat-tile flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3" key={capability.title}>
                     <Wrench size={18} className="text-amber-600" aria-hidden="true" />
-                    <span className="font-bold text-slate-800">{capability}</span>
+                    <span className="font-bold text-slate-800">{capability.title}</span>
                   </div>
                 ))}
               </div>

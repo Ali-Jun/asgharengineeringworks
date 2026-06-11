@@ -283,7 +283,9 @@ a {
 }
 
 .animated-hero {
-  background-size: cover !important;
+  background-position: left center !important;
+  background-repeat: no-repeat;
+  background-size: 260% auto !important;
   animation: hero-breathe 16s ease-in-out infinite alternate;
 }
 
@@ -294,6 +296,7 @@ a {
 .stat-tile {
   position: relative;
   overflow: hidden;
+  overflow-wrap: anywhere;
   transition:
     transform 220ms ease,
     border-color 220ms ease,
@@ -321,6 +324,7 @@ a {
   background:
     linear-gradient(#ffffff, #ffffff) padding-box,
     linear-gradient(135deg, color-mix(in srgb, var(--brand) 28%, white), #d8dee6) border-box;
+  min-width: 0;
   position: relative;
   transition:
     transform 240ms ease,
@@ -366,7 +370,7 @@ a {
   font-size: 0.72rem;
   font-weight: 900;
   gap: 10px;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   letter-spacing: 0;
   padding: 10px 14px;
   text-transform: uppercase;
@@ -379,6 +383,7 @@ a {
   color: #ffffff;
   font-family: var(--font-display);
   padding: 4px 8px;
+  white-space: nowrap;
 }
 
 .product-photo-frame {
@@ -433,12 +438,26 @@ a {
   color: #1e293b;
   display: flex;
   font-weight: 800;
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 9px 12px;
 }
 
 .product-card-footer {
   border-top: 2px solid #e5e7eb;
+  flex-wrap: wrap;
   padding-top: 14px;
+}
+
+.product-card-footer > * {
+  min-width: 0;
+}
+
+.process-panel {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 .tech-row {
@@ -471,11 +490,11 @@ a {
 
 @keyframes hero-breathe {
   from {
-    background-position: center center;
+    background-position: left center;
   }
 
   to {
-    background-position: center top;
+    background-position: left top;
   }
 }
 
@@ -555,11 +574,11 @@ a {
 
 @media (max-width: 760px) {
   .container-shell {
-    width: min(358px, calc(100% - 32px));
+    width: min(1180px, calc(100% - 24px));
   }
 
   .page-band {
-    padding: 60px 0;
+    padding: 56px 0;
   }
 
   .page-band-tight {
@@ -568,7 +587,8 @@ a {
 
   .animated-hero {
     animation: none;
-    background-size: cover !important;
+    background-position: 30% center !important;
+    background-size: auto 100% !important;
   }
 
   .tech-row {
@@ -577,5 +597,20 @@ a {
 
   .product-spec-row {
     grid-template-columns: 78px 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .product-data-header {
+    grid-template-columns: 1fr;
+  }
+
+  .product-code {
+    width: max-content;
+  }
+
+  .product-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

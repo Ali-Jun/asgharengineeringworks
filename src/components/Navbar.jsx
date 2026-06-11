@@ -20,10 +20,10 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/94 backdrop-blur dark:bg-[#0b1220]/94">
       <div className="container-shell">
-        <div className="flex min-h-20 items-center justify-between gap-4">
-          <Link className="focus-ring flex min-w-0 max-w-[calc(100%-56px)] items-center gap-3 rounded-md" to="/" onClick={() => setIsOpen(false)}>
-            <CompanyLogo className="h-11 w-16 border border-slate-200 p-1 sm:h-12 sm:w-20" />
-            <span className="min-w-0 max-w-[170px] sm:max-w-none">
+        <div className="flex min-h-20 items-center justify-between gap-2 sm:gap-4">
+          <Link className="focus-ring flex min-w-0 max-w-[calc(100%-54px)] items-center gap-2 rounded-md sm:gap-3" to="/" onClick={() => setIsOpen(false)}>
+            <CompanyLogo className="h-10 w-14 border border-slate-200 p-1 sm:h-12 sm:w-20" />
+            <span className="min-w-0 max-w-[145px] sm:max-w-none">
               <span className="block truncate text-sm font-black text-slate-950 sm:text-base xl:text-sm 2xl:text-base">
                 Asghar Engineering Works
               </span>
