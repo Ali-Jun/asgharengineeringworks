@@ -2,6 +2,12 @@
 
 Modern frontend-only React website for Asghar Engineering Works.
 
+Live site:
+
+```text
+https://ali-jun.github.io/asgharengineeringworks/
+```
+
 ## Scripts
 
 ```bash
