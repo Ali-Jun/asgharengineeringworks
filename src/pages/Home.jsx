@@ -5,7 +5,6 @@ import CustomerLogoMarquee from '../components/CustomerLogoMarquee.jsx';
 import PageMeta from '../components/PageMeta.jsx';
 import ScrollReveal from '../components/ScrollReveal.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
-import WhatsAppButton from '../components/WhatsAppButton.jsx';
 import { assetPath } from '../utils/assetPath.js';
 
 const strengths = [
@@ -29,7 +28,7 @@ export default function Home() {
     <>
       <PageMeta
         title="Precision Engineering Components"
-        description="Asghar Engineering Works manufactures precision machined components with quality inspection and direct WhatsApp inquiry support."
+        description="Asghar Engineering Works manufactures precision machined components with quality inspection and direct inquiry support."
       />
 
       <section
@@ -60,10 +59,13 @@ export default function Home() {
                 View Products
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <WhatsAppButton className="btn-whatsapp w-full sm:w-auto" />
+              <Link className="btn-secondary focus-ring w-full sm:w-auto" to="/contact">
+                Contact Details
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
             </div>
             <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {['Machined Parts', 'Custom Work', 'Direct WhatsApp', 'Quality First'].map((item) => (
+              {['Machined Parts', 'Custom Work', 'Direct Contact', 'Quality First'].map((item) => (
                 <div className="stat-tile rounded-lg border border-white/14 bg-white/10 px-4 py-3 backdrop-blur" key={item}>
                   <p className="text-sm font-extrabold text-white">{item}</p>
                 </div>

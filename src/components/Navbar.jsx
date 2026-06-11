@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { company, navItems } from '../data/company.js';
 import CompanyLogo from './CompanyLogo.jsx';
 import ThemeToggle from './ThemeToggle.jsx';
-import WhatsAppLogo from './WhatsAppLogo.jsx';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,15 +44,6 @@ export default function Navbar() {
               {company.phones[0]}
             </a>
             <ThemeToggle />
-            <a
-              className="btn-whatsapp text-sm"
-              href={`${company.whatsappUrl}?text=${encodeURIComponent('Hello Asghar Engineering Works, I want to inquire about your products.')}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <WhatsAppLogo size={18} />
-              WhatsApp
-            </a>
           </div>
 
           <div className="hidden lg:block xl:hidden">
@@ -84,15 +74,6 @@ export default function Navbar() {
               <a className="btn-quiet text-sm" href={`tel:${company.phones[0].replaceAll('-', '')}`}>
                 <Phone size={17} aria-hidden="true" />
                 {company.phones[0]}
-              </a>
-              <a
-                className="btn-whatsapp text-sm"
-                href={`${company.whatsappUrl}?text=${encodeURIComponent('Hello Asghar Engineering Works, I want to inquire about your products.')}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <WhatsAppLogo size={18} />
-                WhatsApp
               </a>
               <ThemeToggle />
             </div>

@@ -24,7 +24,7 @@ export default function Products() {
     <>
       <PageMeta
         title="Products"
-        description="Browse precision machined products from Asghar Engineering Works with details and WhatsApp inquiry links."
+        description="Browse precision machined products from Asghar Engineering Works with clear detail pages and inquiry support."
       />
       <PageHeader eyebrow="Products" title="Responsive catalog for precision engineering products.">
         Review the current machined component range and open a direct inquiry for any product.

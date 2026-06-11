@@ -2,7 +2,6 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { company, navItems } from '../data/company.js';
 import CompanyLogo from './CompanyLogo.jsx';
-import WhatsAppLogo from './WhatsAppLogo.jsx';
 
 export default function Footer() {
   return (
@@ -44,10 +43,6 @@ export default function Footer() {
               <a className="flex items-center gap-3 hover:text-white" href={`mailto:${company.email}`}>
                 <Mail size={17} aria-hidden="true" />
                 {company.email}
-              </a>
-              <a className="flex items-center gap-3 hover:text-white" href={company.whatsappUrl} target="_blank" rel="noreferrer">
-                <WhatsAppLogo size={18} />
-                WhatsApp {company.whatsapp}
               </a>
               <p className="flex items-center gap-3">
                 <MapPin size={17} aria-hidden="true" />

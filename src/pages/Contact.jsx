@@ -2,13 +2,10 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import ContactForm from '../components/ContactForm.jsx';
 import PageHeader from '../components/PageHeader.jsx';
 import PageMeta from '../components/PageMeta.jsx';
-import WhatsAppButton from '../components/WhatsAppButton.jsx';
-import WhatsAppLogo from '../components/WhatsAppLogo.jsx';
 import { company } from '../data/company.js';
 
 const contactItems = [
   { icon: Phone, label: 'Phone', value: company.phones.join(', '), href: `tel:${company.phones[0].replaceAll('-', '')}` },
-  { icon: WhatsAppLogo, label: 'WhatsApp', value: company.whatsapp, href: company.whatsappUrl },
   { icon: Mail, label: 'Email', value: company.email, href: `mailto:${company.email}` },
   { icon: MapPin, label: 'Location', value: 'Pakistan', href: null },
 ];
@@ -18,11 +15,10 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact"
-        description="Contact Asghar Engineering Works by phone, email, WhatsApp, or inquiry form."
+        description="Contact Asghar Engineering Works by phone, email, or inquiry form."
       />
       <PageHeader eyebrow="Contact" title="Start a product inquiry.">
-        Use phone, email, WhatsApp, or the inquiry form to discuss a product, drawing, sample, or custom engineering
-        requirement.
+        Use phone, email, or the inquiry form to discuss a product, drawing, sample, or custom engineering requirement.
       </PageHeader>
 
       <section className="page-band bg-white">
@@ -40,14 +36,13 @@ export default function Contact() {
                 );
 
                 return item.href ? (
-                  <a className="focus-ring rounded-lg" href={item.href} target={item.label === 'WhatsApp' ? '_blank' : undefined} rel="noreferrer" key={item.label}>
+                  <a className="focus-ring rounded-lg" href={item.href} key={item.label}>
                     {content}
                   </a>
                 ) : (
                   <div key={item.label}>{content}</div>
                 );
               })}
-              <WhatsAppButton className="btn-whatsapp w-full" />
             </div>
 
             <ContactForm />

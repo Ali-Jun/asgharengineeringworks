@@ -2,7 +2,6 @@ import { ArrowLeft, CheckCircle2, ClipboardList, Layers } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import PageMeta from '../components/PageMeta.jsx';
 import ScrollReveal from '../components/ScrollReveal.jsx';
-import WhatsAppButton from '../components/WhatsAppButton.jsx';
 import { products } from '../data/products.js';
 
 export default function ProductDetails() {
@@ -56,10 +55,6 @@ export default function ProductDetails() {
                 ))}
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
-                <WhatsAppButton
-                  message={`Hello Asghar Engineering Works, I want to inquire about ${product.name}.`}
-                  label="Inquire on WhatsApp"
-                />
                 <Link className="btn-quiet" to="/contact">
                   Contact Details
                 </Link>

@@ -2,7 +2,6 @@ import { ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { company } from '../data/company.js';
 import ScrollReveal from './ScrollReveal.jsx';
-import WhatsAppButton from './WhatsAppButton.jsx';
 
 export default function CTA() {
   return (
@@ -18,7 +17,6 @@ export default function CTA() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <WhatsAppButton />
             <a className="btn-secondary" href={`tel:${company.phones[0].replaceAll('-', '')}`}>
               <Phone size={18} aria-hidden="true" />
               Call Now

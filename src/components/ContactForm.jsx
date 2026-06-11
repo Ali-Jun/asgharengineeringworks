@@ -36,7 +36,7 @@ export default function ContactForm() {
       </button>
       {submitted ? (
         <p className="mt-4 rounded-md border border-teal-200 bg-teal-50 px-4 py-3 text-sm font-semibold text-teal-800">
-          Thank you. For the fastest response, please send your inquiry through WhatsApp or email.
+          Thank you. We will review your inquiry and respond through the provided contact details.
         </p>
       ) : null}
     </form>
