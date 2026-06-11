@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import PageHeader from '../components/PageHeader.jsx';
 import PageMeta from '../components/PageMeta.jsx';
 import ProductCard from '../components/ProductCard.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 import { products } from '../data/products.js';
 
 export default function Products() {
@@ -32,7 +33,7 @@ export default function Products() {
       <section className="motion-fade-in page-band industrial-grid bg-slate-100">
         <div className="container-shell">
           <div className="grid gap-8 lg:grid-cols-[300px_1fr]">
-            <aside className="motion-fade-up h-fit rounded-lg border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28">
+            <ScrollReveal as="aside" className="h-fit rounded-lg border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-28">
               <p className="eyebrow">Catalog Desk</p>
               <h2 className="mt-2 text-2xl font-black text-slate-950">Find a machined part</h2>
               <p className="mt-3 text-sm leading-6 text-slate-600">
@@ -58,19 +59,19 @@ export default function Products() {
                   ))}
                 </div>
               </div>
-            </aside>
+            </ScrollReveal>
 
-            <div className="motion-fade-up motion-delay-1">
+            <div>
               <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                {filteredProducts.map((product, index) => (
+                  <ProductCard delay={(index % 6) * 70} key={product.id} product={product} />
                 ))}
               </div>
 
               {filteredProducts.length === 0 ? (
-                <div className="motion-fade-up rounded-lg border border-slate-200 bg-white p-8 text-center">
+                <ScrollReveal className="rounded-lg border border-slate-200 bg-white p-8 text-center">
                   <p className="text-lg font-bold text-slate-950">No products match that search.</p>
-                </div>
+                </ScrollReveal>
               ) : null}
             </div>
           </div>

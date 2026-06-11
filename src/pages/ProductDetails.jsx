@@ -1,6 +1,7 @@
 import { ArrowLeft, CheckCircle2, ClipboardList, Layers } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import PageMeta from '../components/PageMeta.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 import WhatsAppButton from '../components/WhatsAppButton.jsx';
 import { products } from '../data/products.js';
 
@@ -33,19 +34,19 @@ export default function ProductDetails() {
             Back to Products
           </Link>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch">
-            <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+            <ScrollReveal className="overflow-hidden rounded-lg border border-slate-200 bg-white">
               <img
                 className="h-full min-h-[420px] w-full object-cover"
                 src={product.image}
                 alt={`${product.name} product detail`}
                 style={{ objectPosition: product.imagePosition }}
               />
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-[var(--brand-strong)] p-6 text-white md:p-8">
+            </ScrollReveal>
+            <ScrollReveal className="flex flex-col justify-between rounded-lg bg-[var(--brand-strong)] p-6 text-white md:p-8" delay={100}>
               <div>
-              <p className="eyebrow">{product.category}</p>
-              <h1 className="mt-3 text-4xl font-black leading-tight text-white md:text-6xl">{product.name}</h1>
-              <p className="mt-5 text-lg leading-8 text-slate-300">{product.description}</p>
+                <p className="eyebrow">{product.category}</p>
+                <h1 className="mt-3 text-4xl font-black leading-tight text-white md:text-6xl">{product.name}</h1>
+                <p className="mt-5 text-lg leading-8 text-slate-300">{product.description}</p>
               </div>
               <div className="mt-8 grid gap-3 border-t border-white/10 pt-6 sm:grid-cols-3">
                 {['Drawing', 'Sample', 'Custom Size'].map((item) => (
@@ -63,7 +64,7 @@ export default function ProductDetails() {
                   Contact Details
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -71,9 +72,9 @@ export default function ProductDetails() {
       <section className="page-band bg-slate-100">
         <div className="container-shell">
           <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr]">
-            <DetailList icon={CheckCircle2} title="Features" items={product.features} />
-            <DetailList icon={Layers} title="Applications" items={product.applications} />
-            <DetailList icon={ClipboardList} title="Specifications" items={product.specifications} />
+            <DetailList delay={0} icon={CheckCircle2} title="Features" items={product.features} />
+            <DetailList delay={90} icon={Layers} title="Applications" items={product.applications} />
+            <DetailList delay={180} icon={ClipboardList} title="Specifications" items={product.specifications} />
           </div>
         </div>
       </section>
@@ -81,9 +82,9 @@ export default function ProductDetails() {
   );
 }
 
-function DetailList({ icon: Icon, title, items }) {
+function DetailList({ delay = 0, icon: Icon, title, items }) {
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+    <ScrollReveal as="article" className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm" delay={delay}>
       <Icon className="text-teal-700" size={28} aria-hidden="true" />
       <h2 className="mt-4 text-2xl font-black text-slate-950">{title}</h2>
       <ul className="mt-5 space-y-3">
@@ -94,6 +95,6 @@ function DetailList({ icon: Icon, title, items }) {
           </li>
         ))}
       </ul>
-    </article>
+    </ScrollReveal>
   );
 }

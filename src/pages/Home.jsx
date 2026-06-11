@@ -4,6 +4,7 @@ import CTA from '../components/CTA.jsx';
 import CustomerLogoMarquee from '../components/CustomerLogoMarquee.jsx';
 import PageMeta from '../components/PageMeta.jsx';
 import ProductCard from '../components/ProductCard.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
 import WhatsAppButton from '../components/WhatsAppButton.jsx';
 import { company } from '../data/company.js';
@@ -90,7 +91,7 @@ export default function Home() {
 
       <section className="page-band bg-white">
         <div className="container-shell">
-          <div className="motion-fade-up grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <ScrollReveal className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <SectionTitle eyebrow="Company Profile" title="Built for reliable industrial part inquiries.">
               Asghar Engineering Works manufactures precision metal components for customers who need reliable fitting,
               clean finishing, and straightforward communication.
@@ -107,13 +108,13 @@ export default function Home() {
                 );
               })}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="page-band industrial-grid bg-slate-100">
         <div className="container-shell">
-          <div className="motion-fade-up flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <ScrollReveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionTitle eyebrow="Featured Products" title="A clean catalog for precision engineering products.">
               Browse the machined components produced for industrial assemblies, maintenance work, and custom
               requirements.
@@ -122,12 +123,16 @@ export default function Home() {
               Browse All
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
-          </div>
-          <div className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_1.85fr]">
+          </ScrollReveal>
+          <ScrollReveal className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_1.85fr]" delay={80}>
             <Link
-              className="classic-product-card group overflow-hidden rounded-md border border-slate-300 bg-white shadow-sm"
+              className="classic-product-card group overflow-hidden rounded-sm border border-slate-300 bg-white shadow-sm"
               to={`/products/${featuredProducts[0].id}`}
             >
+              <div className="product-data-header">
+                <span>Featured Component</span>
+                <span className="product-code">AEW-FEATURED</span>
+              </div>
               <div className="aspect-[4/3] overflow-hidden bg-white">
                 <img
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -142,17 +147,17 @@ export default function Home() {
               </div>
             </Link>
             <div className="grid gap-5 sm:grid-cols-2">
-              {featuredProducts.slice(1).map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {featuredProducts.slice(1).map((product, index) => (
+                <ProductCard delay={index * 70} key={product.id} product={product} />
               ))}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="page-band bg-white">
         <div className="container-shell">
-          <div className="motion-fade-up grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <ScrollReveal className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div className="overflow-hidden rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
               <img
                 className="aspect-square w-full object-cover"
@@ -175,7 +180,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

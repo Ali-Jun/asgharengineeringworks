@@ -1,13 +1,14 @@
 import { ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { company } from '../data/company.js';
+import ScrollReveal from './ScrollReveal.jsx';
 import WhatsAppButton from './WhatsAppButton.jsx';
 
 export default function CTA() {
   return (
     <section className="bg-[var(--brand-strong)] py-14 text-white">
       <div className="container-shell">
-        <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+        <ScrollReveal className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
           <div>
             <p className="eyebrow text-amber-300">Direct inquiry</p>
             <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">Need a custom engineering component?</h2>
@@ -27,7 +28,7 @@ export default function CTA() {
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
