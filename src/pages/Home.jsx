@@ -28,16 +28,16 @@ export default function Home() {
       />
 
       <section
-        className="relative overflow-hidden bg-slate-950 text-white"
+        className="animated-hero motion-fade-in relative overflow-hidden bg-slate-950 text-white"
         style={{
           backgroundImage:
-            `linear-gradient(90deg, rgba(12, 24, 62, 0.96) 0%, rgba(28, 53, 122, 0.8) 43%, rgba(46, 79, 163, 0.28) 100%), url('${assetPath('/images/hero-manufacturing.png')}')`,
+            `linear-gradient(90deg, rgba(7, 17, 44, 0.88) 0%, rgba(26, 50, 116, 0.58) 48%, rgba(46, 79, 163, 0.08) 100%), url('${assetPath('/images/hero-manufacturing.png')}')`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
         }}
       >
         <div className="container-shell grid min-h-[78vh] items-center gap-10 py-14 lg:grid-cols-[1fr_420px]">
-          <div className="max-w-3xl">
+          <div className="motion-fade-up max-w-3xl">
             <p className="mb-4 inline-flex items-center gap-2 rounded-md border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold text-slate-100">
               <Factory size={17} aria-hidden="true" />
               Corporate manufacturing and product catalog
@@ -59,14 +59,14 @@ export default function Home() {
             </div>
             <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
               {['13 Products', 'Product Catalog', 'Direct WhatsApp', 'Quality First'].map((item) => (
-                <div className="rounded-lg border border-white/14 bg-white/10 px-4 py-3 backdrop-blur" key={item}>
+                <div className="stat-tile rounded-lg border border-white/14 bg-white/10 px-4 py-3 backdrop-blur" key={item}>
                   <p className="text-sm font-extrabold text-white">{item}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="hidden lg:block">
-            <div className="border border-white/14 bg-white/10 p-4 backdrop-blur">
+          <div className="motion-fade-up motion-delay-2 hidden lg:block">
+            <div className="hero-product-panel border border-white/14 bg-white/10 p-4 backdrop-blur">
               <img
                 className="aspect-square w-full bg-white object-cover"
                 src={assetPath('/images/products/product-12.jpeg')}
@@ -90,7 +90,7 @@ export default function Home() {
 
       <section className="page-band bg-white">
         <div className="container-shell">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="motion-fade-up grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <SectionTitle eyebrow="Company Profile" title="Built for reliable industrial part inquiries.">
               Asghar Engineering Works manufactures precision metal components for customers who need reliable fitting,
               clean finishing, and straightforward communication.
@@ -99,7 +99,7 @@ export default function Home() {
               {strengths.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <article className="rounded-lg border border-slate-200 bg-slate-50 p-5" key={item.title}>
+                  <article className="stat-tile rounded-lg border border-slate-200 bg-slate-50 p-5" key={item.title}>
                     <Icon className="text-teal-700" size={28} aria-hidden="true" />
                     <h3 className="mt-4 text-lg font-black text-slate-950">{item.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-600">{item.copy}</p>
@@ -113,7 +113,7 @@ export default function Home() {
 
       <section className="page-band industrial-grid bg-slate-100">
         <div className="container-shell">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="motion-fade-up flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionTitle eyebrow="Featured Products" title="A clean catalog for 13 engineering products.">
               Browse the machined components produced for industrial assemblies, maintenance work, and custom
               requirements.
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-[1.15fr_1.85fr]">
             <Link
-              className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              className="classic-product-card group overflow-hidden rounded-md border border-slate-300 bg-white shadow-sm"
               to={`/products/${featuredProducts[0].id}`}
             >
               <div className="aspect-[4/3] overflow-hidden bg-white">
@@ -152,8 +152,8 @@ export default function Home() {
 
       <section className="page-band bg-white">
         <div className="container-shell">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div className="overflow-hidden rounded-lg">
+          <div className="motion-fade-up grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div className="overflow-hidden rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
               <img
                 className="aspect-square w-full object-cover"
                 src={assetPath('/images/products/product-08.jpeg')}
@@ -168,7 +168,7 @@ export default function Home() {
               </SectionTitle>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 {capabilities.map((capability) => (
-                  <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3" key={capability}>
+                  <div className="stat-tile flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3" key={capability}>
                     <Wrench size={18} className="text-amber-600" aria-hidden="true" />
                     <span className="font-bold text-slate-800">{capability}</span>
                   </div>
