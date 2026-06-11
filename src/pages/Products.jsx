@@ -63,8 +63,8 @@ export default function Products() {
 
             <div>
               <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-                {filteredProducts.map((product, index) => (
-                  <ProductCard delay={(index % 6) * 70} key={product.id} product={product} />
+                {filteredProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
                 ))}
               </div>
 

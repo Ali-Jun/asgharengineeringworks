@@ -35,9 +35,10 @@ export default function ProductDetails() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch">
             <ScrollReveal className="overflow-hidden rounded-lg border border-slate-200 bg-white">
               <img
-                className="h-full min-h-[420px] w-full object-cover"
+                className="h-full min-h-[420px] w-full bg-white object-contain"
                 src={product.image}
                 alt={`${product.name} product detail`}
+                decoding="async"
                 style={{ objectPosition: product.imagePosition }}
               />
             </ScrollReveal>

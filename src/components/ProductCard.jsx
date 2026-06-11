@@ -1,5 +1,4 @@
 import { ArrowRight, ClipboardList, Package, Ruler } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function readSpec(product, label, fallback) {
@@ -16,9 +15,7 @@ function processFor(category) {
   return 'Precision machining';
 }
 
-export default function ProductCard({ product, delay = 0 }) {
-  const cardRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+export default function ProductCard({ product }) {
   const productCode = `AEW-${product.id.replace('product-', 'P')}`;
   const primaryUse = product.applications?.[0] || 'Industrial assemblies';
   const material = readSpec(product, 'Material', 'As per requirement');
@@ -30,40 +27,8 @@ export default function ProductCard({ product, delay = 0 }) {
     { label: 'Finish', value: finish },
   ];
 
-  useEffect(() => {
-    const card = cardRef.current;
-    if (!card) return undefined;
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-      setIsVisible(true);
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        rootMargin: '0px 0px -8% 0px',
-        threshold: 0.14,
-      },
-    );
-
-    observer.observe(card);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <article
-      className={`classic-product-card reveal-card group overflow-hidden rounded-sm border border-slate-300 bg-white shadow-sm ${isVisible ? 'is-visible' : ''}`}
-      ref={cardRef}
-      style={{ '--reveal-delay': `${delay}ms` }}
-    >
+    <article className="classic-product-card group overflow-hidden rounded-sm border border-slate-300 bg-white shadow-sm">
       <div className="product-data-header">
         <span className="inline-flex items-center gap-2">
           <ClipboardList size={15} aria-hidden="true" />
@@ -77,10 +42,11 @@ export default function ProductCard({ product, delay = 0 }) {
       <Link className="focus-ring block bg-white p-4" to={`/products/${product.id}`} aria-label={`View ${product.name} data sheet`}>
         <div className="product-photo-frame aspect-[4/3] overflow-hidden border border-slate-200 bg-white">
           <img
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
             src={product.image}
             alt={`${product.name} precision engineering component`}
             loading="lazy"
+            decoding="async"
             style={{ objectPosition: product.imagePosition }}
           />
         </div>

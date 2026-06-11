@@ -35,12 +35,10 @@ export default function Home() {
         className="animated-hero motion-fade-in relative overflow-hidden bg-slate-950 text-white"
         style={{
           backgroundImage:
-            `linear-gradient(90deg, rgba(7, 17, 44, 0.88) 0%, rgba(26, 50, 116, 0.58) 48%, rgba(46, 79, 163, 0.08) 100%), url('${assetPath('/images/hero-manufacturing.png')}')`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
+            `linear-gradient(90deg, rgba(7, 17, 44, 0.84) 0%, rgba(16, 32, 73, 0.64) 48%, rgba(16, 32, 73, 0.3) 100%), url('${assetPath('/images/hero-manufacturing.jpg')}')`,
         }}
       >
-        <div className="container-shell grid min-h-[78vh] items-center gap-10 py-14 lg:grid-cols-[1fr_380px]">
+        <div className="container-shell grid min-h-[76vh] items-center gap-10 py-14 lg:grid-cols-[minmax(0,1fr)_360px]">
           <div className="motion-fade-up max-w-3xl">
             <p className="mb-4 inline-flex items-center gap-2 rounded-md border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold text-slate-100">
               <Factory size={17} aria-hidden="true" />
