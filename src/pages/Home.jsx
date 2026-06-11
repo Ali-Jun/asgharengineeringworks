@@ -55,7 +55,7 @@ export default function Home() {
                 View Products
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <WhatsAppButton className="btn-secondary w-full sm:w-auto" />
+              <WhatsAppButton className="btn-whatsapp w-full sm:w-auto" />
             </div>
             <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
               {['13 Products', 'Product Catalog', 'Direct WhatsApp', 'Quality First'].map((item) => (

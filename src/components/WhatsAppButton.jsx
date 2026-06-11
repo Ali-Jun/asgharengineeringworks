@@ -3,7 +3,7 @@ import WhatsAppLogo from './WhatsAppLogo.jsx';
 
 export default function WhatsAppButton({
   message = 'Hello Asghar Engineering Works, I want to inquire about your products.',
-  className = 'btn-primary',
+  className = 'btn-whatsapp',
   label = 'WhatsApp Inquiry',
 }) {
   const url = `${company.whatsappUrl}?text=${encodeURIComponent(message)}`;

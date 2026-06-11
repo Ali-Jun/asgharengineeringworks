@@ -86,6 +86,7 @@ a {
 
 .btn-primary,
 .btn-secondary,
+.btn-whatsapp,
 .btn-quiet {
   display: inline-flex;
   align-items: center;
@@ -125,6 +126,18 @@ a {
   transform: translateY(-1px);
   border-color: rgba(255, 255, 255, 0.62);
   background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.25);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-1px);
+  background: #1fbd5a;
+  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.34);
 }
 
 .btn-quiet {

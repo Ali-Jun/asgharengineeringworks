@@ -47,7 +47,7 @@ export default function Contact() {
                   <div key={item.label}>{content}</div>
                 );
               })}
-              <WhatsAppButton className="btn-primary w-full" />
+              <WhatsAppButton className="btn-whatsapp w-full" />
             </div>
 
             <ContactForm />

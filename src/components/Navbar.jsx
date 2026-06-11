@@ -46,7 +46,7 @@ export default function Navbar() {
             </a>
             <ThemeToggle />
             <a
-              className="btn-primary text-sm"
+              className="btn-whatsapp text-sm"
               href={`${company.whatsappUrl}?text=${encodeURIComponent('Hello Asghar Engineering Works, I want to inquire about your products.')}`}
               target="_blank"
               rel="noreferrer"
@@ -86,7 +86,7 @@ export default function Navbar() {
                 {company.phones[0]}
               </a>
               <a
-                className="btn-primary text-sm"
+                className="btn-whatsapp text-sm"
                 href={`${company.whatsappUrl}?text=${encodeURIComponent('Hello Asghar Engineering Works, I want to inquire about your products.')}`}
                 target="_blank"
                 rel="noreferrer"
