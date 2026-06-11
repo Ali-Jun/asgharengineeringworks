@@ -25,7 +25,7 @@ export default function Products() {
         title="Products"
         description="Browse precision machined products from Asghar Engineering Works with details and WhatsApp inquiry links."
       />
-      <PageHeader eyebrow="Products" title="Responsive catalog for 13 engineering products.">
+      <PageHeader eyebrow="Products" title="Responsive catalog for precision engineering products.">
         Review the current machined component range and open a direct inquiry for any product.
       </PageHeader>
 
@@ -49,7 +49,7 @@ export default function Products() {
                 />
               </label>
               <div className="mt-6 border-t border-slate-200 pt-5">
-                <p className="text-sm font-bold text-slate-500">{filteredProducts.length} of {products.length} products shown</p>
+                <p className="text-sm font-bold text-slate-500">Matching products shown</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {categories.map((category) => (
                     <span className="rounded-md bg-slate-100 px-3 py-2 text-xs font-bold text-slate-700" key={category}>

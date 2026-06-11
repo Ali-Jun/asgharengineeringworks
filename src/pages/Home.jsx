@@ -58,7 +58,7 @@ export default function Home() {
               <WhatsAppButton className="btn-whatsapp w-full sm:w-auto" />
             </div>
             <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {['13 Products', 'Product Catalog', 'Direct WhatsApp', 'Quality First'].map((item) => (
+              {['Machined Parts', 'Product Catalog', 'Direct WhatsApp', 'Quality First'].map((item) => (
                 <div className="stat-tile rounded-lg border border-white/14 bg-white/10 px-4 py-3 backdrop-blur" key={item}>
                   <p className="text-sm font-extrabold text-white">{item}</p>
                 </div>
@@ -114,7 +114,7 @@ export default function Home() {
       <section className="page-band industrial-grid bg-slate-100">
         <div className="container-shell">
           <div className="motion-fade-up flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <SectionTitle eyebrow="Featured Products" title="A clean catalog for 13 engineering products.">
+            <SectionTitle eyebrow="Featured Products" title="A clean catalog for precision engineering products.">
               Browse the machined components produced for industrial assemblies, maintenance work, and custom
               requirements.
             </SectionTitle>
