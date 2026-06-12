@@ -12,12 +12,12 @@ export default function Navbar() {
     [
       'rounded-md px-3 py-2 text-sm font-bold transition-colors focus-ring',
       isActive
-        ? 'bg-[var(--brand)] text-white'
+        ? 'bg-[var(--brand)] !text-white shadow-sm'
         : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950 dark:hover:bg-slate-800',
     ].join(' ');
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/94 backdrop-blur dark:bg-[#0b1220]/94">
+    <header className="site-header sticky top-0 z-50 border-b border-slate-200 backdrop-blur">
       <div className="container-shell">
         <div className="flex min-h-20 items-center justify-between gap-2 sm:gap-4">
           <Link className="focus-ring flex min-w-0 max-w-[calc(100%-54px)] items-center gap-2 rounded-md sm:gap-3" to="/" onClick={() => setIsOpen(false)}>

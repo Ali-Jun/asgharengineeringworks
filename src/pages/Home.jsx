@@ -35,35 +35,37 @@ export default function Home() {
         className="animated-hero motion-fade-in relative overflow-hidden bg-slate-950 text-white"
         style={{
           backgroundImage:
-            `linear-gradient(90deg, rgba(7, 17, 44, 0.84) 0%, rgba(16, 32, 73, 0.64) 48%, rgba(16, 32, 73, 0.3) 100%), url('${assetPath('/images/hero-manufacturing.jpg')}')`,
+            `linear-gradient(90deg, rgba(1, 44, 26, 0.9) 0%, rgba(1, 65, 28, 0.74) 46%, rgba(1, 65, 28, 0.26) 100%), url('${assetPath('/images/hero-manufacturing.png')}')`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
         }}
       >
-        <div className="container-shell grid min-h-[76vh] items-center gap-10 py-14 lg:grid-cols-[minmax(0,1fr)_360px]">
-          <div className="motion-fade-up max-w-3xl">
+        <div className="container-shell grid min-h-[78vh] items-center gap-10 py-14 lg:grid-cols-[1fr_380px]">
+          <div className="motion-fade-up w-full min-w-0 max-w-3xl">
             <p className="mb-4 inline-flex items-center gap-2 rounded-md border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold text-slate-100">
               <Factory size={17} aria-hidden="true" />
-              Corporate precision manufacturing
+              Pakistan based precision manufacturing
             </p>
             <h1 className="max-w-full text-4xl font-black leading-[1.05] text-white sm:text-5xl md:text-7xl">
               <span className="block">Asghar Engineering</span>
               <span className="block">Works</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
-              Precision machined components, clean inspection workflows, and direct inquiry support for industrial and
-              engineering customers.
+              Precision machined components, clean inspection workflows, and direct inquiry support for local
+              industrial and engineering customers.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link className="btn-primary focus-ring w-full sm:w-auto" to="/products">
+            <div className="mt-8 flex min-w-0 flex-wrap gap-3">
+              <Link className="btn-primary focus-ring min-w-0 w-full sm:w-auto" to="/products">
                 View Products
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <Link className="btn-secondary focus-ring w-full sm:w-auto" to="/contact">
+              <Link className="btn-secondary focus-ring min-w-0 w-full sm:w-auto" to="/contact">
                 Contact Details
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </div>
             <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {['Machined Parts', 'Custom Work', 'Direct Contact', 'Quality First'].map((item) => (
+              {['Local Support', 'Custom Work', 'Direct Contact', 'Quality First'].map((item) => (
                 <div className="stat-tile rounded-lg border border-white/14 bg-white/10 px-4 py-3 backdrop-blur" key={item}>
                   <p className="text-sm font-extrabold text-white">{item}</p>
                 </div>
@@ -72,8 +74,8 @@ export default function Home() {
           </div>
           <div className="motion-fade-up motion-delay-2 hidden lg:block">
             <div className="hero-product-panel border border-white/14 bg-white/10 p-5 backdrop-blur">
-              <p className="text-sm font-bold text-amber-200">Workshop Readiness</p>
-              <h2 className="mt-2 font-display text-3xl font-black text-white">Engineering inquiry desk</h2>
+              <p className="text-sm font-bold text-amber-200">Industrial Supply Desk</p>
+              <h2 className="mt-2 font-display text-3xl font-black text-white">Made for reliable work</h2>
               <div className="mt-6 grid gap-3">
                 {workflow.map((item, index) => (
                   <div className="grid grid-cols-[42px_1fr] items-center gap-3 rounded-md border border-white/12 bg-white/10 p-3" key={item}>

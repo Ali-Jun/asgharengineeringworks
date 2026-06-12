@@ -5,9 +5,8 @@ export default function CompanyLogo({ className = '', imageClassName = '' }) {
     <span className={`logo-surface inline-flex shrink-0 items-center justify-center overflow-hidden rounded-md ${className}`}>
       <img
         className={`h-full w-full object-contain ${imageClassName}`}
-        src={assetPath('/images/company-logo.svg')}
+        src={assetPath('/images/company-logo.png')}
         alt="Asghar Engineering Works logo"
-        decoding="async"
       />
     </span>
   );
