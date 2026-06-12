@@ -35,7 +35,7 @@ export default function Home() {
         className="animated-hero motion-fade-in relative overflow-hidden bg-slate-950 text-white"
         style={{
           backgroundImage:
-            `linear-gradient(90deg, rgba(1, 44, 26, 0.9) 0%, rgba(1, 65, 28, 0.74) 46%, rgba(1, 65, 28, 0.26) 100%), url('${assetPath('/images/hero-manufacturing.png')}')`,
+            `linear-gradient(90deg, rgba(7, 23, 44, 0.9) 0%, rgba(17, 65, 128, 0.74) 48%, rgba(47, 111, 211, 0.28) 100%), url('${assetPath('/images/hero-manufacturing.png')}')`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
         }}

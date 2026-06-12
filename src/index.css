@@ -8,34 +8,34 @@
     Aptos, "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     sans-serif;
   --font-display: Bahnschrift, "Aptos Display", "Arial Narrow", Aptos, "Segoe UI", sans-serif;
-  --brand: #01411c;
-  --brand-strong: #00321a;
-  --brand-soft: #e7f4ec;
-  --ink: #10231a;
-  --muted: #607168;
-  --steel: #dfe8e2;
-  --line: #d6e2da;
+  --brand: #2f6fd3;
+  --brand-strong: #24449d;
+  --brand-soft: #eaf5ff;
+  --ink: #10213a;
+  --muted: #607086;
+  --steel: #dceaf6;
+  --line: #cfe0ef;
   --amber: #c8952f;
-  --teal: #0b6b3a;
-  --navy: #06150e;
-  --page: #f7faf6;
+  --teal: #1879bd;
+  --navy: #07172c;
+  --page: #f5faff;
   --surface: #ffffff;
 }
 
 .dark {
   color-scheme: dark;
-  --brand: #2fd174;
-  --brand-strong: #65e39a;
-  --brand-soft: #0d291a;
-  --ink: #eef8f1;
-  --muted: #b5c7bb;
-  --steel: #14281d;
-  --line: #284838;
+  --brand: #7dd3fc;
+  --brand-strong: #38bdf8;
+  --brand-soft: #0d2a44;
+  --ink: #eef7ff;
+  --muted: #b6c6d8;
+  --steel: #122335;
+  --line: #27425d;
   --amber: #f0c46a;
-  --teal: #39d982;
-  --navy: #03110a;
-  --page: #06100a;
-  --surface: #0d1d14;
+  --teal: #93c5fd;
+  --navy: #06111f;
+  --page: #07111e;
+  --surface: #0e1a2b;
 }
 
 * {
@@ -45,7 +45,7 @@
 body {
   margin: 0;
   background:
-    linear-gradient(180deg, rgba(1, 65, 28, 0.045), transparent 280px),
+    linear-gradient(180deg, rgba(47, 111, 211, 0.08), transparent 280px),
     var(--page);
   color: var(--ink);
   font-family:
@@ -110,19 +110,19 @@ a {
 .btn-primary {
   background: var(--brand);
   color: #ffffff;
-  box-shadow: 0 12px 28px rgba(1, 65, 28, 0.24);
+  box-shadow: 0 12px 28px rgba(47, 111, 211, 0.24);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
   background: var(--brand-strong);
-  box-shadow: 0 16px 34px rgba(1, 65, 28, 0.32);
+  box-shadow: 0 16px 34px rgba(47, 111, 211, 0.32);
 }
 
 .btn-secondary {
   border: 1px solid rgba(240, 196, 106, 0.64);
   color: #ffffff;
-  background: rgba(1, 65, 28, 0.18);
+  background: rgba(47, 111, 211, 0.18);
 }
 
 .btn-secondary:hover {
@@ -153,20 +153,21 @@ a {
 
 .industrial-grid {
   background-image:
-    linear-gradient(rgba(1, 65, 28, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(1, 65, 28, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(47, 111, 211, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 111, 211, 0.06) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 .focus-ring:focus-visible {
-  outline: 3px solid rgba(1, 65, 28, 0.34);
+  outline: 3px solid rgba(47, 111, 211, 0.34);
   outline-offset: 3px;
 }
 
 .site-header {
   border-top: 4px solid var(--brand);
+  border-image: linear-gradient(90deg, var(--brand-strong), #7dd3fc, var(--amber)) 1;
   background: rgba(255, 255, 255, 0.96) !important;
-  box-shadow: 0 8px 28px rgba(1, 65, 28, 0.08);
+  box-shadow: 0 8px 28px rgba(47, 111, 211, 0.1);
 }
 
 .logo-surface {
@@ -211,7 +212,7 @@ a {
 
 .bg-amber-400 {
   background: var(--amber) !important;
-  color: #06150e !important;
+  color: var(--navy) !important;
 }
 
 .border-teal-200 {
@@ -234,7 +235,7 @@ a {
 }
 
 .dark .site-header {
-  background: rgba(3, 17, 10, 0.96) !important;
+  background: rgba(6, 17, 31, 0.96) !important;
   border-color: var(--amber);
 }
 
@@ -318,7 +319,7 @@ a {
 
 .hero-product-panel {
   background:
-    linear-gradient(180deg, rgba(1, 65, 28, 0.82), rgba(0, 50, 26, 0.72)) !important;
+    linear-gradient(180deg, rgba(17, 65, 128, 0.86), rgba(7, 23, 44, 0.74)) !important;
   border-color: rgba(240, 196, 106, 0.42) !important;
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.24);
 }
@@ -418,8 +419,8 @@ a {
 
 .product-photo-frame {
   background-image:
-    linear-gradient(rgba(1, 65, 28, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(1, 65, 28, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(47, 111, 211, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 111, 211, 0.04) 1px, transparent 1px);
   background-size: 22px 22px;
   position: relative;
 }
@@ -453,7 +454,7 @@ a {
 
 .product-spec-row span {
   align-items: center;
-  background: #f3f8f5;
+  background: #f3f8ff;
   border-right: 1px solid var(--line);
   color: #64748b;
   display: flex;
