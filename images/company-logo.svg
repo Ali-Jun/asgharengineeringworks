@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-labelledby="title desc">
+  <title id="title">Asghar Engineering Works logo</title>
+  <desc id="desc">A blue AS monogram.</desc>
+  <rect width="240" height="140" rx="12" fill="#ffffff"/>
+  <path d="M16 120 67 18h63l-20 41H76L48 120H16Z" fill="#2e4fa3"/>
+  <path d="M77 120V72L54 120h23Z" fill="#2e4fa3"/>
+  <path d="M115 18h56c33 0 54 17 54 42 0 16-8 28-24 36 13 5 20 14 20 27 0 5-.6 10-1.8 15H111V99h74c9 0 15-4 15-11 0-8-6-12-17-12h-49V42h50c9 0 14-4 14-10 0-8-6-14-17-14h-66Z" fill="#2e4fa3"/>
+  <path d="M128 72h75" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+  <path d="M146 48c13 1 25 6 36 15" stroke="#ffffff" stroke-width="9" stroke-linecap="round" fill="none"/>
+</svg>
