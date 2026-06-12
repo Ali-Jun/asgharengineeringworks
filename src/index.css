@@ -173,6 +173,26 @@ a {
   background: #ffffff;
 }
 
+.company-logo-surface {
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #24449d, var(--amber)) border-box;
+  border-color: transparent !important;
+  box-shadow: 0 8px 22px rgba(36, 68, 157, 0.1);
+}
+
+.company-logo-surface::after {
+  background: var(--amber);
+  content: "";
+  height: 3px;
+  inset: auto 8px 5px;
+  position: absolute;
+}
+
+.company-logo-mark {
+  padding: 2px;
+}
+
 .text-teal-700,
 .text-teal-800 {
   color: var(--brand) !important;
