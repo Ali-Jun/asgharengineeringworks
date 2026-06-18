@@ -309,6 +309,38 @@ a {
   position: absolute;
 }
 
+.home-banner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  isolation: isolate;
+  min-height: 280px;
+  position: relative;
+}
+
+.home-banner::before {
+  background-image:
+    linear-gradient(rgba(125, 211, 252, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.12) 1px, transparent 1px);
+  background-size: 36px 36px;
+  content: "";
+  inset: 0;
+  opacity: 0.36;
+  pointer-events: none;
+  position: absolute;
+}
+
+.home-banner::after {
+  animation: scan-line 5.4s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(240, 196, 106, 0.38), transparent);
+  content: "";
+  height: 1px;
+  inset: auto 0 30%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-100%);
+}
+
 .catalog-desk {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(234, 245, 255, 0.92));
@@ -817,6 +849,7 @@ a {
   }
 
   .blueprint-header::after,
+  .home-banner::after,
   .blueprint-meter::before,
   .animated-rail::before,
   .floating-panel,
@@ -898,6 +931,15 @@ a {
   .animated-hero .stat-tile {
     min-width: 0;
     padding-inline: 14px;
+  }
+
+  .home-banner {
+    min-height: 0;
+  }
+
+  .home-banner .btn-primary,
+  .home-banner .btn-secondary {
+    width: 100%;
   }
 
   .tech-row {

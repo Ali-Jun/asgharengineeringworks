@@ -22,6 +22,7 @@ const capabilities = [
 ];
 
 const workflow = ['Requirement review', 'Material discussion', 'Machining plan', 'Inspection and delivery'];
+const bannerItems = ['Drawing Review', 'Sample Matching', 'Custom Machining', 'Finish Check'];
 
 export default function Home() {
   return (
@@ -92,6 +93,54 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-6 dark:bg-[var(--surface)]">
+        <div className="container-shell">
+          <ScrollReveal
+            className="home-banner relative overflow-hidden rounded-xl border border-white/12 px-5 py-8 text-white shadow-2xl md:px-8 lg:px-10"
+            style={{
+              backgroundImage:
+                `linear-gradient(105deg, rgba(7, 23, 44, 0.96) 0%, rgba(17, 65, 128, 0.88) 52%, rgba(47, 111, 211, 0.54) 100%), url('${assetPath('/images/hero-manufacturing.png')}')`,
+            }}
+          >
+            <div className="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.72fr)] lg:items-center">
+              <div>
+                <p className="inline-flex items-center gap-2 rounded-md border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold text-sky-100">
+                  <Gauge size={17} aria-hidden="true" />
+                  Manufacturing support
+                </p>
+                <h2 className="mt-4 max-w-3xl font-display text-3xl font-black leading-tight text-white md:text-5xl">
+                  Custom machining support for industrial buyers.
+                </h2>
+                <p className="mt-4 max-w-2xl text-base leading-7 text-slate-200 md:text-lg">
+                  Send a drawing, sample, or requirement and discuss material, dimensions, finishing, and delivery with a
+                  direct workshop contact.
+                </p>
+              </div>
+
+              <div className="grid gap-3">
+                <div className="grid grid-cols-2 gap-3">
+                  {bannerItems.map((item) => (
+                    <div className="rounded-md border border-white/14 bg-white/10 px-4 py-3 backdrop-blur" key={item}>
+                      <p className="text-sm font-extrabold text-white">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <Link className="btn-primary min-w-0 flex-1 sm:flex-none" to="/contact">
+                    Start Inquiry
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </Link>
+                  <Link className="btn-secondary min-w-0 flex-1 sm:flex-none" to="/products">
+                    View Catalog
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
