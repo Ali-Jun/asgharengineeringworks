@@ -5,9 +5,10 @@
 :root {
   color-scheme: light;
   font-family:
-    Aptos, "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Manrope, "Trebuchet MS", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     sans-serif;
-  --font-display: Bahnschrift, "Aptos Display", "Arial Narrow", Aptos, "Segoe UI", sans-serif;
+  --font-body: Manrope, "Trebuchet MS", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-display: Rajdhani, "Arial Narrow", Bahnschrift, "Trebuchet MS", sans-serif;
   --brand: #2f6fd3;
   --brand-strong: #24449d;
   --brand-soft: #eaf5ff;
@@ -48,9 +49,7 @@ body {
     linear-gradient(180deg, rgba(47, 111, 211, 0.08), transparent 280px),
     var(--page);
   color: var(--ink);
-  font-family:
-    Aptos, "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.55;
   overflow-x: hidden;
@@ -62,6 +61,12 @@ h3,
 .font-display {
   font-family: var(--font-display);
   letter-spacing: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
 }
 
 button,
@@ -98,6 +103,7 @@ a {
   border-radius: 6px;
   min-height: 44px;
   padding: 11px 18px;
+  font-family: var(--font-display);
   font-weight: 700;
   transition:
     transform 180ms ease,
@@ -146,7 +152,7 @@ a {
   font-family: var(--font-display);
   color: var(--teal);
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -326,6 +332,12 @@ a {
 .focus-ring:focus-visible {
   outline: 3px solid rgba(47, 111, 211, 0.34);
   outline-offset: 3px;
+}
+
+.site-header nav,
+.site-header button,
+.site-header .btn-quiet {
+  font-family: var(--font-display);
 }
 
 .site-header {
@@ -564,6 +576,7 @@ a {
   color: #ffffff;
   display: grid;
   font-size: 0.72rem;
+  font-family: var(--font-display);
   font-weight: 900;
   gap: 10px;
   grid-template-columns: minmax(0, 1fr) auto;
