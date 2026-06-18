@@ -24,7 +24,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#090f1c] dark:text-slate-100">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
       <ScrollToTop />
       <Navbar />
       <main>

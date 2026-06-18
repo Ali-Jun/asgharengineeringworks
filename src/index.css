@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
   color-scheme: light;
   font-family:
@@ -21,22 +19,6 @@
   --navy: #07172c;
   --page: #f5faff;
   --surface: #ffffff;
-}
-
-.dark {
-  color-scheme: dark;
-  --brand: #7dd3fc;
-  --brand-strong: #38bdf8;
-  --brand-soft: #0d2a44;
-  --ink: #eef7ff;
-  --muted: #b6c6d8;
-  --steel: #122335;
-  --line: #27425d;
-  --amber: #f0c46a;
-  --teal: #93c5fd;
-  --navy: #06111f;
-  --page: #07111e;
-  --surface: #0e1a2b;
 }
 
 * {
@@ -348,19 +330,6 @@ a {
   box-shadow: 0 22px 58px rgba(15, 31, 53, 0.1);
 }
 
-.dark .blueprint-section {
-  background:
-    linear-gradient(180deg, rgba(14, 26, 43, 0.94), rgba(7, 17, 30, 0.98)),
-    var(--page);
-}
-
-.dark .layout-card,
-.dark .layout-panel,
-.dark .catalog-desk {
-  background: var(--surface);
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
-}
-
 .focus-ring:focus-visible {
   outline: 3px solid rgba(47, 111, 211, 0.34);
   outline-offset: 3px;
@@ -430,47 +399,6 @@ a {
 
 .bg-teal-50 {
   background: var(--brand-soft) !important;
-}
-
-.dark .bg-white:not(.logo-surface),
-.dark .bg-slate-50,
-.dark .bg-slate-100 {
-  background-color: var(--surface) !important;
-}
-
-.dark .bg-slate-950,
-.dark footer {
-  background-color: var(--navy) !important;
-}
-
-.dark .site-header {
-  background: rgba(6, 17, 31, 0.96) !important;
-  border-color: var(--amber);
-}
-
-.dark .text-slate-950,
-.dark .text-slate-900,
-.dark .text-slate-800,
-.dark .text-slate-700 {
-  color: var(--ink) !important;
-}
-
-.dark .text-slate-600,
-.dark .text-slate-500,
-.dark .text-slate-400,
-.dark .text-slate-300 {
-  color: var(--muted) !important;
-}
-
-.dark .border-slate-200,
-.dark .border-slate-300 {
-  border-color: var(--line) !important;
-}
-
-.dark input,
-.dark textarea {
-  background: #081827;
-  color: var(--ink);
 }
 
 .line-clamp-2 {

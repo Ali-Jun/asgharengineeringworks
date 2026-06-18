@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-6 dark:bg-[var(--surface)]">
+      <section className="bg-white py-6">
         <div className="container-shell">
           <ScrollReveal
             className="home-banner relative overflow-hidden rounded-xl border border-white/12 px-5 py-8 text-white shadow-2xl md:px-8 lg:px-10"

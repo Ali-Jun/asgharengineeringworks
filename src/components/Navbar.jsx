@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { company, navItems } from '../data/company.js';
 import CompanyLogo from './CompanyLogo.jsx';
-import ThemeToggle from './ThemeToggle.jsx';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +12,7 @@ export default function Navbar() {
       'rounded-md px-3 py-2 text-sm font-bold transition-colors focus-ring',
       isActive
         ? 'bg-[var(--brand)] !text-white shadow-sm'
-        : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950 dark:hover:bg-slate-800',
+        : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950',
     ].join(' ');
 
   return (
@@ -43,15 +42,10 @@ export default function Navbar() {
               <Phone size={17} aria-hidden="true" />
               {company.phones[0]}
             </a>
-            <ThemeToggle />
-          </div>
-
-          <div className="hidden lg:block xl:hidden">
-            <ThemeToggle />
           </div>
 
           <button
-            className="focus-ring grid h-11 w-11 place-items-center rounded-md border border-slate-200 bg-white text-slate-900 lg:hidden dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+            className="focus-ring grid h-11 w-11 place-items-center rounded-md border border-slate-200 bg-white text-slate-900 lg:hidden"
             type="button"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
@@ -75,7 +69,6 @@ export default function Navbar() {
                 <Phone size={17} aria-hidden="true" />
                 {company.phones[0]}
               </a>
-              <ThemeToggle />
             </div>
           </div>
         ) : null}
