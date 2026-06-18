@@ -158,6 +158,171 @@ a {
   background-size: 32px 32px;
 }
 
+.blueprint-section {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(234, 245, 255, 0.72)),
+    var(--page);
+  position: relative;
+}
+
+.blueprint-section::before {
+  background:
+    linear-gradient(90deg, transparent, rgba(47, 111, 211, 0.12), transparent),
+    linear-gradient(rgba(47, 111, 211, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 111, 211, 0.055) 1px, transparent 1px);
+  background-size: 100% 100%, 44px 44px, 44px 44px;
+  content: "";
+  inset: 0;
+  opacity: 0.72;
+  pointer-events: none;
+  position: absolute;
+}
+
+.blueprint-section > * {
+  position: relative;
+}
+
+.blueprint-header {
+  background:
+    linear-gradient(115deg, rgba(7, 23, 44, 0.98), rgba(17, 65, 128, 0.94) 54%, rgba(47, 111, 211, 0.76)),
+    var(--navy);
+  border-bottom: 1px solid rgba(125, 211, 252, 0.22);
+  color: #ffffff;
+  overflow: hidden;
+  padding: 78px 0;
+  position: relative;
+}
+
+.blueprint-header::before {
+  background-image:
+    linear-gradient(rgba(125, 211, 252, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.12) 1px, transparent 1px);
+  background-size: 40px 40px;
+  content: "";
+  inset: 0;
+  opacity: 0.52;
+  pointer-events: none;
+  position: absolute;
+}
+
+.blueprint-header::after {
+  animation: scan-line 5s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(240, 196, 106, 0.34), transparent);
+  content: "";
+  height: 1px;
+  inset: auto 0 26%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-100%);
+}
+
+.blueprint-header .container-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.blueprint-meter {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  position: relative;
+}
+
+.blueprint-meter::before {
+  animation: line-sweep 4.8s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.28), transparent);
+  content: "";
+  height: 100%;
+  left: -40%;
+  position: absolute;
+  top: 0;
+  width: 40%;
+}
+
+.layout-card,
+.layout-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 46px rgba(15, 31, 53, 0.08);
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.layout-card:hover,
+.layout-panel:hover {
+  border-color: color-mix(in srgb, var(--brand) 34%, var(--line));
+  box-shadow: 0 24px 58px rgba(15, 31, 53, 0.13);
+  transform: translateY(-4px);
+}
+
+.split-layout {
+  align-items: stretch;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+}
+
+.animated-rail {
+  border-left: 1px solid color-mix(in srgb, var(--brand) 36%, var(--line));
+  padding-left: 24px;
+  position: relative;
+}
+
+.animated-rail::before {
+  animation: rail-run 3.8s ease-in-out infinite;
+  background: linear-gradient(var(--brand), var(--amber));
+  content: "";
+  height: 76px;
+  left: -1px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.floating-panel {
+  animation: panel-float 5.5s ease-in-out infinite;
+}
+
+.hero-stage {
+  min-height: 78vh;
+}
+
+.hero-stage::after {
+  background:
+    linear-gradient(90deg, rgba(125, 211, 252, 0.18) 1px, transparent 1px),
+    linear-gradient(rgba(125, 211, 252, 0.12) 1px, transparent 1px);
+  background-size: 64px 64px;
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(180deg, black, transparent 78%);
+  opacity: 0.35;
+  pointer-events: none;
+  position: absolute;
+}
+
+.catalog-desk {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(234, 245, 255, 0.92));
+  border: 1px solid color-mix(in srgb, var(--brand) 16%, var(--line));
+  box-shadow: 0 22px 58px rgba(15, 31, 53, 0.1);
+}
+
+.dark .blueprint-section {
+  background:
+    linear-gradient(180deg, rgba(14, 26, 43, 0.94), rgba(7, 17, 30, 0.98)),
+    var(--page);
+}
+
+.dark .layout-card,
+.dark .layout-panel,
+.dark .catalog-desk {
+  background: var(--surface);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
+}
+
 .focus-ring:focus-visible {
   outline: 3px solid rgba(47, 111, 211, 0.34);
   outline-offset: 3px;
@@ -260,7 +425,7 @@ a {
 
 .dark input,
 .dark textarea {
-  background: #07150d;
+  background: #081827;
   color: var(--ink);
 }
 
@@ -520,6 +685,41 @@ a {
   }
 }
 
+@keyframes scan-line {
+  0%,
+  18% {
+    transform: translateX(-100%);
+  }
+
+  62%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes line-sweep {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+
+  70%,
+  100% {
+    transform: translateX(360%);
+  }
+}
+
+@keyframes rail-run {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50% {
+    top: calc(100% - 76px);
+  }
+}
+
 @keyframes hero-breathe {
   from {
     background-position: left center;
@@ -602,6 +802,14 @@ a {
     opacity: 1;
     transform: none;
   }
+
+  .blueprint-header::after,
+  .blueprint-meter::before,
+  .animated-rail::before,
+  .floating-panel,
+  .customer-marquee {
+    animation: none;
+  }
 }
 
 @media (max-width: 760px) {
@@ -616,6 +824,23 @@ a {
 
   .page-band-tight {
     padding: 48px 0;
+  }
+
+  .blueprint-header {
+    padding: 56px 0;
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .animated-rail {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .animated-rail::before {
+    display: none;
   }
 
   .animated-hero {

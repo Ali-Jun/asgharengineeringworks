@@ -32,7 +32,7 @@ export default function Home() {
       />
 
       <section
-        className="animated-hero motion-fade-in relative overflow-hidden bg-slate-950 text-white"
+        className="animated-hero hero-stage motion-fade-in relative overflow-hidden bg-slate-950 text-white"
         style={{
           backgroundImage:
             `linear-gradient(90deg, rgba(7, 23, 44, 0.9) 0%, rgba(17, 65, 128, 0.74) 48%, rgba(47, 111, 211, 0.28) 100%), url('${assetPath('/images/hero-manufacturing.png')}')`,
@@ -40,7 +40,7 @@ export default function Home() {
           backgroundSize: 'cover',
         }}
       >
-        <div className="container-shell grid min-h-[78vh] items-center gap-10 py-14 lg:grid-cols-[1fr_380px]">
+        <div className="container-shell relative z-10 grid min-h-[78vh] items-center gap-10 py-14 lg:grid-cols-[1fr_380px]">
           <div className="motion-fade-up w-full min-w-0 max-w-3xl">
             <p className="mb-4 inline-flex items-center gap-2 rounded-md border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold text-slate-100">
               <Factory size={17} aria-hidden="true" />
@@ -73,7 +73,7 @@ export default function Home() {
             </div>
           </div>
           <div className="motion-fade-up motion-delay-2 hidden lg:block">
-            <div className="hero-product-panel border border-white/14 bg-white/10 p-5 backdrop-blur">
+            <div className="hero-product-panel floating-panel border border-white/14 bg-white/10 p-5 backdrop-blur">
               <p className="text-sm font-bold text-amber-200">Industrial Supply Desk</p>
               <h2 className="mt-2 font-display text-3xl font-black text-white">Made for reliable work</h2>
               <div className="mt-6 grid gap-3">
@@ -97,18 +97,18 @@ export default function Home() {
 
       <CustomerLogoMarquee />
 
-      <section className="page-band bg-white">
+      <section className="page-band blueprint-section">
         <div className="container-shell">
-          <ScrollReveal className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <ScrollReveal className="split-layout lg:items-center">
             <SectionTitle eyebrow="Company Profile" title="Built for reliable industrial part inquiries.">
               Asghar Engineering Works manufactures precision metal components for customers who need reliable fitting,
               clean finishing, and straightforward communication.
             </SectionTitle>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="animated-rail grid gap-4 sm:grid-cols-2">
               {strengths.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <article className="stat-tile rounded-lg border border-slate-200 bg-slate-50 p-5" key={item.title}>
+                  <article className="layout-card stat-tile rounded-lg p-5" key={item.title}>
                     <Icon className="text-teal-700" size={28} aria-hidden="true" />
                     <h3 className="mt-4 text-lg font-black text-slate-950">{item.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-600">{item.copy}</p>
@@ -120,9 +120,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="page-band industrial-grid bg-slate-100">
+      <section className="page-band bg-white">
         <div className="container-shell">
-          <ScrollReveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <ScrollReveal className="rounded-xl border border-slate-200 bg-[var(--brand-soft)] p-5 shadow-sm md:p-7">
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionTitle eyebrow="Engineering Capability" title="Classic workshop capability for serious inquiries.">
               Clear manufacturing support for buyers who want practical machining, repair, and fitment communication
               before placing an order.
@@ -131,12 +132,13 @@ export default function Home() {
               Open Products Page
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
+            </div>
           </ScrollReveal>
           <ScrollReveal className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" delay={80}>
             {capabilities.map((item) => {
               const Icon = item.icon;
               return (
-                <article className="stat-tile rounded-lg border border-slate-200 bg-white p-6 shadow-sm" key={item.title}>
+                <article className="layout-card stat-tile rounded-lg p-6" key={item.title}>
                   <Icon className="text-teal-700" size={30} aria-hidden="true" />
                   <h3 className="mt-5 text-xl font-black text-slate-950">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{item.copy}</p>
@@ -147,10 +149,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="page-band bg-white">
+      <section className="page-band blueprint-section">
         <div className="container-shell">
           <ScrollReveal className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div className="process-panel rounded-lg border border-slate-200 bg-slate-950 p-6 text-white shadow-sm">
+            <div className="process-panel layout-panel rounded-lg border border-slate-200 bg-slate-950 p-6 text-white">
               <p className="eyebrow text-white">Process Board</p>
               <h2 className="mt-3 font-display text-3xl font-black">From sample to finished work.</h2>
               <div className="mt-8 grid gap-4">
@@ -176,7 +178,7 @@ export default function Home() {
               </SectionTitle>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 {capabilities.map((capability) => (
-                  <div className="stat-tile flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3" key={capability.title}>
+                  <div className="layout-card stat-tile flex items-center gap-3 rounded-lg px-4 py-3" key={capability.title}>
                     <Wrench size={18} className="text-amber-600" aria-hidden="true" />
                     <span className="font-bold text-slate-800">{capability.title}</span>
                   </div>

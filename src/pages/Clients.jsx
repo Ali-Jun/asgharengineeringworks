@@ -2,6 +2,7 @@ import { Factory, Hammer, Settings, Wrench } from 'lucide-react';
 import CTA from '../components/CTA.jsx';
 import PageHeader from '../components/PageHeader.jsx';
 import PageMeta from '../components/PageMeta.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
 import { customers } from '../data/customers.js';
 
@@ -24,18 +25,24 @@ export default function Clients() {
         custom engineering support.
       </PageHeader>
 
-      <section className="page-band industrial-grid bg-slate-100">
+      <section className="page-band blueprint-section">
         <div className="container-shell">
-          <SectionTitle eyebrow="Customer Logos" title="Companies and sectors connected with our work." align="center">
-            These logos represent the customer and industry network shown for Asghar Engineering Works.
-          </SectionTitle>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ScrollReveal className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <SectionTitle eyebrow="Customer Logos" title="Companies and sectors connected with our work.">
+              These logos represent the customer and industry network shown for Asghar Engineering Works.
+            </SectionTitle>
+            <div className="animated-rail rounded-lg border border-slate-200 bg-white/80 p-5 shadow-sm">
+              <p className="text-sm font-bold uppercase text-slate-500">Customer network</p>
+              <p className="mt-2 text-2xl font-black text-slate-950">Recognized industrial and engineering names.</p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" delay={90}>
             {customers.map((customer) => (
-              <article className="logo-surface grid h-32 place-items-center rounded-lg border border-slate-200 p-5 shadow-sm" key={customer.name}>
+              <article className="logo-surface layout-card grid h-32 place-items-center rounded-lg p-5" key={customer.name}>
                 <img className="max-h-20 w-full object-contain" src={customer.logo} alt={`${customer.name} logo`} loading="lazy" />
               </article>
             ))}
-          </div>
+          </ScrollReveal>
 
           <div className="mt-16">
             <SectionTitle eyebrow="Customer Groups" title="Built for buyers who need clear component communication." align="center">
@@ -47,7 +54,7 @@ export default function Clients() {
             {industries.map((item) => {
               const Icon = item.icon;
               return (
-                <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm" key={item.title}>
+                <article className="layout-card rounded-lg p-6" key={item.title}>
                   <Icon className="text-teal-700" size={30} aria-hidden="true" />
                   <h2 className="mt-5 text-xl font-black text-slate-950">{item.title}</h2>
                   <p className="mt-3 leading-6 text-slate-600">{item.copy}</p>

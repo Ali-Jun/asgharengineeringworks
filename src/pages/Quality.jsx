@@ -2,6 +2,7 @@ import { CheckCircle2, ClipboardCheck, Ruler, ShieldCheck, Sparkles } from 'luci
 import CTA from '../components/CTA.jsx';
 import PageHeader from '../components/PageHeader.jsx';
 import PageMeta from '../components/PageMeta.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
 
 const process = [
@@ -23,18 +24,18 @@ export default function Quality() {
         improvement.
       </PageHeader>
 
-      <section className="page-band bg-white">
+      <section className="page-band blueprint-section">
         <div className="container-shell">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <ScrollReveal className="split-layout">
             <SectionTitle eyebrow="Policy" title="Consistent standards for every product inquiry.">
               Asghar Engineering Works is positioned around dependable manufacturing, clear customer communication, and
               careful attention to fit, finish, and practical performance.
             </SectionTitle>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="animated-rail grid gap-4 sm:grid-cols-2">
               {process.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <article className="rounded-lg border border-slate-200 bg-slate-50 p-5" key={item.title}>
+                  <article className="layout-card rounded-lg p-5" key={item.title}>
                     <Icon className="text-teal-700" size={28} aria-hidden="true" />
                     <h3 className="mt-4 text-xl font-black text-slate-950">{item.title}</h3>
                     <p className="mt-2 leading-6 text-slate-600">{item.copy}</p>
@@ -42,15 +43,15 @@ export default function Quality() {
                 );
               })}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="page-band-tight bg-slate-950 text-white">
         <div className="container-shell">
-          <div className="grid gap-6 md:grid-cols-3">
+          <ScrollReveal className="grid gap-6 md:grid-cols-3">
             {['Material', 'Measurement', 'Finish'].map((step, index) => (
-              <div className="rounded-lg border border-white/10 bg-white/[0.06] p-6" key={step}>
+              <div className="stat-tile rounded-lg border border-white/10 bg-white/[0.06] p-6" key={step}>
                 <div className="grid h-10 w-10 place-items-center rounded-md bg-amber-400 font-black text-slate-950">
                   {index + 1}
                 </div>
@@ -64,11 +65,11 @@ export default function Quality() {
                 </p>
               </div>
             ))}
-          </div>
-          <div className="mt-8 flex items-center gap-3 rounded-lg bg-teal-600 px-5 py-4 text-white">
+          </ScrollReveal>
+          <ScrollReveal className="mt-8 flex items-center gap-3 rounded-lg bg-teal-600 px-5 py-4 text-white" delay={120}>
             <CheckCircle2 size={22} aria-hidden="true" />
             <p className="font-bold">Every component is reviewed for fit, finish, and practical customer requirements before delivery.</p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

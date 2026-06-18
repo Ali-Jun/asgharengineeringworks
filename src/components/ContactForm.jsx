@@ -6,7 +6,7 @@ export default function ContactForm() {
 
   return (
     <form
-      className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+      className="layout-card rounded-lg p-5 md:p-6"
       onSubmit={(event) => {
         event.preventDefault();
         setSubmitted(true);

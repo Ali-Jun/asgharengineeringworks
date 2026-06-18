@@ -26,14 +26,14 @@ export default function ProductDetails() {
   return (
     <>
       <PageMeta title={product.name} description={product.shortDescription} />
-      <section className="industrial-grid bg-white py-12 md:py-16">
+      <section className="blueprint-section py-12 md:py-16">
         <div className="container-shell">
           <Link className="mb-8 inline-flex items-center gap-2 rounded-md font-bold text-slate-700 hover:text-slate-950" to="/products">
             <ArrowLeft size={18} aria-hidden="true" />
             Back to Products
           </Link>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch">
-            <ScrollReveal className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+            <ScrollReveal className="layout-card overflow-hidden rounded-lg">
               <img
                 className="h-full min-h-[420px] w-full bg-white object-contain"
                 src={product.image}
@@ -42,7 +42,7 @@ export default function ProductDetails() {
                 style={{ objectPosition: product.imagePosition }}
               />
             </ScrollReveal>
-            <ScrollReveal className="flex flex-col justify-between rounded-lg bg-[var(--brand-strong)] p-6 text-white md:p-8" delay={100}>
+            <ScrollReveal className="blueprint-meter flex flex-col justify-between rounded-lg p-6 text-white md:p-8" delay={100}>
               <div>
                 <p className="eyebrow">{product.category}</p>
                 <h1 className="mt-3 text-4xl font-black leading-tight text-white md:text-6xl">{product.name}</h1>
@@ -65,7 +65,7 @@ export default function ProductDetails() {
         </div>
       </section>
 
-      <section className="page-band bg-slate-100">
+      <section className="page-band bg-white">
         <div className="container-shell">
           <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1fr]">
             <DetailList delay={0} icon={CheckCircle2} title="Features" items={product.features} />
@@ -80,7 +80,7 @@ export default function ProductDetails() {
 
 function DetailList({ delay = 0, icon: Icon, title, items }) {
   return (
-    <ScrollReveal as="article" className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm" delay={delay}>
+    <ScrollReveal as="article" className="layout-card rounded-lg p-6" delay={delay}>
       <Icon className="text-teal-700" size={28} aria-hidden="true" />
       <h2 className="mt-4 text-2xl font-black text-slate-950">{title}</h2>
       <ul className="mt-5 space-y-3">

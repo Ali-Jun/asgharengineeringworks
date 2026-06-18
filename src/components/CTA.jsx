@@ -5,9 +5,9 @@ import ScrollReveal from './ScrollReveal.jsx';
 
 export default function CTA() {
   return (
-    <section className="bg-[var(--brand-strong)] py-14 text-white">
+    <section className="blueprint-header py-14 text-white">
       <div className="container-shell">
-        <ScrollReveal className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+        <ScrollReveal className="blueprint-meter grid items-center gap-8 rounded-lg p-6 lg:grid-cols-[1fr_auto]">
           <div>
             <p className="eyebrow text-amber-300">Direct inquiry</p>
             <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">Need a custom engineering component?</h2>

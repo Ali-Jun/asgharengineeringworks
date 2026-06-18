@@ -2,6 +2,7 @@ import { Building2, CheckCircle2, Target, Users } from 'lucide-react';
 import CTA from '../components/CTA.jsx';
 import PageHeader from '../components/PageHeader.jsx';
 import PageMeta from '../components/PageMeta.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
 import { company } from '../data/company.js';
 
@@ -19,21 +20,21 @@ export default function About() {
         direct inquiry support.
       </PageHeader>
 
-      <section className="page-band bg-white">
+      <section className="page-band blueprint-section">
         <div className="container-shell">
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <ScrollReveal className="split-layout lg:items-start">
             <div>
               <SectionTitle eyebrow="Company" title={company.name}>
                 The business focuses on practical machining support, clear customer communication, and dependable
                 component finishing for industrial requirements.
               </SectionTitle>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+                <article className="layout-card rounded-lg p-5">
                   <Users size={27} className="text-teal-700" aria-hidden="true" />
                   <p className="mt-4 text-sm font-bold text-slate-500">Proprietor</p>
                   <h3 className="mt-1 text-xl font-black text-slate-950">{company.proprietor}</h3>
                 </article>
-                <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+                <article className="layout-card rounded-lg p-5">
                   <Building2 size={27} className="text-teal-700" aria-hidden="true" />
                   <p className="mt-4 text-sm font-bold text-slate-500">Managing Director</p>
                   <h3 className="mt-1 text-xl font-black text-slate-950">{company.managingDirector}</h3>
@@ -41,8 +42,8 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid gap-5">
-              <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="animated-rail grid gap-5">
+              <article className="layout-card rounded-lg p-6">
                 <Target size={28} className="text-amber-600" aria-hidden="true" />
                 <h3 className="mt-4 text-2xl font-black text-slate-950">Mission</h3>
                 <p className="mt-3 leading-7 text-slate-600">
@@ -50,7 +51,7 @@ export default function About() {
                   consistent attention to finishing and fitment.
                 </p>
               </article>
-              <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <article className="layout-card rounded-lg p-6">
                 <Target size={28} className="text-teal-700" aria-hidden="true" />
                 <h3 className="mt-4 text-2xl font-black text-slate-950">Vision</h3>
                 <p className="mt-3 leading-7 text-slate-600">
@@ -59,11 +60,11 @@ export default function About() {
                 </p>
               </article>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="page-band-tight industrial-grid bg-slate-100">
+      <section className="page-band-tight bg-white">
         <div className="container-shell">
           <SectionTitle eyebrow="Business Values" title="Practical standards customers can recognize." align="center">
             Our work stays focused on what matters for manufacturing buyers: reliable fit, clear communication, and
@@ -71,7 +72,7 @@ export default function About() {
           </SectionTitle>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (
-              <div className="rounded-lg border border-slate-200 bg-white p-5 text-center shadow-sm" key={value}>
+              <div className="layout-card rounded-lg p-5 text-center" key={value}>
                 <CheckCircle2 className="mx-auto text-teal-700" size={28} aria-hidden="true" />
                 <p className="mt-4 text-lg font-black text-slate-950">{value}</p>
               </div>
