@@ -23,6 +23,7 @@ const capabilities = [
 
 const workflow = ['Requirement review', 'Material discussion', 'Machining plan', 'Inspection and delivery'];
 const bannerItems = ['Drawing Review', 'Sample Matching', 'Custom Machining', 'Finish Check'];
+const heroStats = ['Drawing support', 'Sample matching', 'Custom sizes', 'Direct inquiry'];
 
 export default function Home() {
   return (
@@ -45,28 +46,28 @@ export default function Home() {
           <div className="motion-fade-up w-full min-w-0 max-w-3xl">
             <p className="mb-4 inline-flex items-center gap-2 rounded-md border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold text-slate-100">
               <Factory size={17} aria-hidden="true" />
-              Pakistan based precision manufacturing
+              From sample review to finished component
             </p>
             <h1 className="max-w-full text-4xl font-black leading-[1.05] text-white sm:text-5xl md:text-7xl">
-              <span className="block">Asghar Engineering</span>
-              <span className="block">Works</span>
+              <span className="block">Custom CNC machining</span>
+              <span className="block">made straightforward.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
-              Precision machined components, clean inspection workflows, and direct inquiry support for local
-              industrial and engineering customers.
+              Asghar Engineering Works supports precision machined components, drawing discussions, sample matching,
+              finishing checks, and direct workshop communication.
             </p>
             <div className="mt-8 flex min-w-0 flex-wrap gap-3">
               <Link className="btn-primary focus-ring min-w-0 w-full sm:w-auto" to="/products">
-                View Products
+                Explore Capability
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link className="btn-secondary focus-ring min-w-0 w-full sm:w-auto" to="/contact">
-                Contact Details
+                Start Quote
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </div>
             <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {['Local Support', 'Custom Work', 'Direct Contact', 'Quality First'].map((item) => (
+              {heroStats.map((item) => (
                 <div className="stat-tile rounded-lg border border-white/14 bg-white/10 px-4 py-3 backdrop-blur" key={item}>
                   <p className="text-sm font-extrabold text-white">{item}</p>
                 </div>
@@ -75,8 +76,8 @@ export default function Home() {
           </div>
           <div className="motion-fade-up motion-delay-2 hidden lg:block">
             <div className="hero-product-panel floating-panel border border-white/14 bg-white/10 p-5 backdrop-blur">
-              <p className="text-sm font-bold text-amber-200">Industrial Supply Desk</p>
-              <h2 className="mt-2 font-display text-3xl font-black text-white">Made for reliable work</h2>
+              <p className="text-sm font-bold text-amber-200">Instant inquiry desk</p>
+              <h2 className="mt-2 font-display text-3xl font-black text-white">Tell us what you need machined.</h2>
               <div className="mt-6 grid gap-3">
                 {workflow.map((item, index) => (
                   <div className="grid grid-cols-[42px_1fr] items-center gap-3 rounded-md border border-white/12 bg-white/10 p-3" key={item}>
@@ -88,11 +89,29 @@ export default function Home() {
                 ))}
               </div>
               <Link className="btn-primary mt-6 w-full" to="/contact">
-                Start Inquiry
+                Request Discussion
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-0">
+        <div className="container-shell">
+          <ScrollReveal className="quote-strip -mt-8 grid overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ['Inquiry', 'Drawing or sample review'],
+              ['Material', 'Requirement discussion'],
+              ['Machining', 'Custom component support'],
+              ['Delivery', 'Clear contact and follow-up'],
+            ].map(([label, value]) => (
+              <div className="border-b border-slate-200 px-5 py-5 sm:border-r sm:last:border-r-0 lg:border-b-0" key={label}>
+                <p className="eyebrow">{label}</p>
+                <p className="mt-2 text-lg font-black text-slate-950">{value}</p>
+              </div>
+            ))}
+          </ScrollReveal>
         </div>
       </section>
 
@@ -112,11 +131,11 @@ export default function Home() {
                   Manufacturing support
                 </p>
                 <h2 className="mt-4 max-w-3xl font-display text-3xl font-black leading-tight text-white md:text-5xl">
-                  Custom machining support for industrial buyers.
+                  Reliable machining support without complicated inquiry steps.
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-7 text-slate-200 md:text-lg">
-                  Send a drawing, sample, or requirement and discuss material, dimensions, finishing, and delivery with a
-                  direct workshop contact.
+                  Share the requirement, confirm the important dimensions, then discuss finishing and delivery through a
+                  direct contact point.
                 </p>
               </div>
 
@@ -173,7 +192,7 @@ export default function Home() {
         <div className="container-shell">
           <ScrollReveal className="rounded-xl border border-slate-200 bg-[var(--brand-soft)] p-5 shadow-sm md:p-7">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <SectionTitle eyebrow="Engineering Capability" title="Classic workshop capability for serious inquiries.">
+            <SectionTitle eyebrow="Machining Services" title="Precision support from review to finishing.">
               Clear manufacturing support for buyers who want practical machining, repair, and fitment communication
               before placing an order.
             </SectionTitle>

@@ -1,4 +1,4 @@
-import { Menu, Phone, X } from 'lucide-react';
+import { ArrowRight, Menu, Phone, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { company, navItems } from '../data/company.js';
@@ -17,6 +17,12 @@ export default function Navbar() {
 
   return (
     <header className="site-header sticky top-0 z-50 border-b border-slate-200 backdrop-blur">
+      <div className="header-strip hidden border-b border-slate-200 bg-[var(--navy)] py-2 text-white md:block">
+        <div className="container-shell flex items-center justify-between gap-4 text-xs font-extrabold uppercase tracking-normal">
+          <span>Pakistan based precision manufacturing</span>
+          <span>Drawing, sample, and custom component inquiries</span>
+        </div>
+      </div>
       <div className="container-shell">
         <div className="flex min-h-20 items-center justify-between gap-2 sm:gap-4">
           <Link className="focus-ring flex min-w-0 max-w-[calc(100%-54px)] items-center gap-2 rounded-md sm:gap-3" to="/" onClick={() => setIsOpen(false)}>
@@ -42,6 +48,10 @@ export default function Navbar() {
               <Phone size={17} aria-hidden="true" />
               {company.phones[0]}
             </a>
+            <Link className="btn-primary text-sm" to="/contact">
+              Get Quote
+              <ArrowRight size={17} aria-hidden="true" />
+            </Link>
           </div>
 
           <button
@@ -69,6 +79,10 @@ export default function Navbar() {
                 <Phone size={17} aria-hidden="true" />
                 {company.phones[0]}
               </a>
+              <Link className="btn-primary text-sm" to="/contact" onClick={() => setIsOpen(false)}>
+                Get Quote
+                <ArrowRight size={17} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         ) : null}
