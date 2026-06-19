@@ -9,24 +9,24 @@ export default function Navbar() {
 
   const linkClass = ({ isActive }) =>
     [
-      'rounded-md px-3 py-2 text-sm font-bold transition-colors focus-ring',
+      'nav-link-pill focus-ring',
       isActive
-        ? 'bg-[var(--brand)] !text-white shadow-sm'
-        : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950',
+        ? 'nav-link-pill-active'
+        : 'text-slate-700 hover:text-[var(--brand-strong)]',
     ].join(' ');
 
   return (
-    <header className="site-header sticky top-0 z-50 border-b border-slate-200 backdrop-blur">
-      <div className="header-strip hidden border-b border-slate-200 bg-[var(--navy)] py-2 text-white md:block">
+    <header className="site-header sticky top-0 z-50 backdrop-blur">
+      <div className="header-strip hidden py-2 text-white md:block">
         <div className="container-shell flex items-center justify-between gap-4 text-xs font-extrabold uppercase tracking-normal">
           <span>Pakistan based precision manufacturing</span>
           <span>Drawing, sample, and custom component inquiries</span>
         </div>
       </div>
       <div className="container-shell">
-        <div className="flex min-h-20 items-center justify-between gap-2 sm:gap-4">
-          <Link className="focus-ring flex min-w-0 max-w-[calc(100%-54px)] items-center gap-2 rounded-md sm:gap-3" to="/" onClick={() => setIsOpen(false)}>
-            <CompanyLogo className="h-10 w-14 border border-slate-200 p-1 sm:h-12 sm:w-20" />
+        <div className="site-nav-row flex min-h-20 items-center justify-between gap-2 sm:gap-4">
+          <Link className="brand-lockup focus-ring flex min-w-0 max-w-[calc(100%-54px)] items-center gap-2 rounded-md sm:gap-3" to="/" onClick={() => setIsOpen(false)}>
+            <CompanyLogo className="h-11 w-16 border border-slate-200 p-1 sm:h-12 sm:w-20" />
             <span className="min-w-0 max-w-[145px] sm:max-w-none">
               <span className="block truncate text-sm font-black text-slate-950 sm:text-base xl:text-sm 2xl:text-base">
                 Asghar Engineering Works
@@ -44,7 +44,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-2 xl:flex">
-            <a className="btn-quiet text-sm" href={`tel:${company.phones[0].replaceAll('-', '')}`}>
+            <a className="nav-phone-button text-sm" href={`tel:${company.phones[0].replaceAll('-', '')}`}>
               <Phone size={17} aria-hidden="true" />
               {company.phones[0]}
             </a>
@@ -55,7 +55,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="focus-ring grid h-11 w-11 place-items-center rounded-md border border-slate-200 bg-white text-slate-900 lg:hidden"
+            className="nav-menu-button focus-ring grid h-11 w-11 place-items-center rounded-md text-slate-900 lg:hidden"
             type="button"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
@@ -66,7 +66,7 @@ export default function Navbar() {
         </div>
 
         {isOpen ? (
-          <div className="border-t border-slate-200 py-4 lg:hidden">
+          <div className="mobile-menu-panel py-4 lg:hidden">
             <nav className="grid gap-2" aria-label="Mobile navigation">
               {navItems.map((item) => (
                 <NavLink className={linkClass} key={item.path} to={item.path} onClick={() => setIsOpen(false)}>
@@ -75,7 +75,7 @@ export default function Navbar() {
               ))}
             </nav>
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              <a className="btn-quiet text-sm" href={`tel:${company.phones[0].replaceAll('-', '')}`}>
+              <a className="nav-phone-button text-sm" href={`tel:${company.phones[0].replaceAll('-', '')}`}>
                 <Phone size={17} aria-hidden="true" />
                 {company.phones[0]}
               </a>

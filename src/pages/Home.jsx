@@ -5,6 +5,7 @@ import CustomerLogoMarquee from '../components/CustomerLogoMarquee.jsx';
 import PageMeta from '../components/PageMeta.jsx';
 import ScrollReveal from '../components/ScrollReveal.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
+import { products } from '../data/products.js';
 import { assetPath } from '../utils/assetPath.js';
 
 const strengths = [
@@ -24,6 +25,7 @@ const capabilities = [
 const workflow = ['Requirement review', 'Material discussion', 'Machining plan', 'Inspection and delivery'];
 const bannerItems = ['Drawing Review', 'Sample Matching', 'Custom Machining', 'Finish Check'];
 const heroStats = ['Drawing support', 'Sample matching', 'Custom sizes', 'Direct inquiry'];
+const serviceProducts = products.slice(1, 9);
 
 export default function Home() {
   return (
@@ -192,27 +194,33 @@ export default function Home() {
         <div className="container-shell">
           <ScrollReveal className="rounded-xl border border-slate-200 bg-[var(--brand-soft)] p-5 shadow-sm md:p-7">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <SectionTitle eyebrow="Machining Services" title="Precision support from review to finishing.">
-              Clear manufacturing support for buyers who want practical machining, repair, and fitment communication
-              before placing an order.
-            </SectionTitle>
-            <Link className="btn-quiet w-fit" to="/products">
-              Open Products Page
-              <ArrowRight size={18} aria-hidden="true" />
-            </Link>
+              <SectionTitle eyebrow="Machining Services" title="Workshop-made precision component samples.">
+                A clean photo preview of machined components, with full details kept inside the products catalog.
+              </SectionTitle>
+              <Link className="btn-quiet w-fit" to="/products">
+                Open Products Page
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
             </div>
           </ScrollReveal>
-          <ScrollReveal className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" delay={80}>
-            {capabilities.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article className="layout-card stat-tile rounded-lg p-6" key={item.title}>
-                  <Icon className="text-teal-700" size={30} aria-hidden="true" />
-                  <h3 className="mt-5 text-xl font-black text-slate-950">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.copy}</p>
-                </article>
-              );
-            })}
+          <ScrollReveal className="service-photo-grid mt-10" delay={80}>
+            {serviceProducts.map((product, index) => (
+              <Link
+                className="service-photo-tile focus-ring"
+                key={product.id}
+                to={`/products/${product.id}`}
+                aria-label={`Open ${product.name} product detail`}
+                style={{ '--tile-delay': `${index * 70}ms` }}
+              >
+                <img
+                  src={product.image}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  style={{ objectPosition: product.imagePosition }}
+                />
+              </Link>
+            ))}
           </ScrollReveal>
         </div>
       </section>
